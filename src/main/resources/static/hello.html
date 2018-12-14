@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Hello
+            </title>
+            <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js">
+            </script>
+        </meta>
+    </head>
+    <body>
+        <h1>
+            Hello Biu biu biu!!!
+        </h1>
+        <p th:text="${hello}">
+        </p>
+        <div id="app">
+            <p>
+                {{ message }}
+            </p>
+        </div>
+        <div id="databinding">
+            <button v-on:click="show = !show">
+                点我
+            </button>
+            <transition name="fade">
+                <p v-bind:style="styleobj" v-show="show">
+                    动画实例
+                </p>
+            </transition>
+        </div>
+        <script type="text/javascript">
+            var vm = new Vue({
+    el: '#databinding',
+    data: {
+        show:true,
+        styleobj :{
+            fontSize:'30px',
+            color:'red'
+        }
+    },
+    methods : {
+    }
+});
+    new Vue({
+        el: '#app',
+        data: {
+            message: "ljp"
+        }
+    })
+        </script>
+        <script id="mymouse" src="js/mymouse.js" type="text/javascript">
+        </script>
+    </body>
+</html>
